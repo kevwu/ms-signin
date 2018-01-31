@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "electron": "^1.7.11"
+  },
+  "name": "ms-signin",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevwu/ms-signin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevwu/ms-signin/issues"
+  },
+  "homepage": "https://github.com/kevwu/ms-signin#readme",
+  "description": "",
+  "env": "DEV"
+}
