@@ -8,18 +8,44 @@
 	<script src="render.js"></script>
 </head>
 <body>
-<div id="logo">&nbsp;</div>
 
-<div id="reader-flag">
+
+<div id="swipehere">
 	<p>SWIPE HERE</p>
+	<h1>→ → →</h1>
 </div>
 
 <div id="form">
+	<header>
+		<img src="makerstudioslogo.svg" />
+		<h1>SIGN IN</h1>
+	</header>
+	<h1 id="form-message">
+		Welcome! Please swipe your ID to sign in.
+	</h1>
+	<div id="form-dirinfo">
+		<table>
+			<tr>
+				<td>Name</td><td id="form-dirinfo-name"></td>
+				<td>EID</td><td id="form-dirinfo-eid"></td>
+				<td>Classification</td><td id="form-dirinfo-classification"></td>
+				<td>School</td><td id="form-dirinfo-school"></td>
+				<td>Major</td><td id="form-dirinfo-major"></td>
+			</tr>
+		</table>
+	</div>
+	<div id="form-survey">
+		<div id="form-survey-equipment">
 
-</div>
+		</div>
 
-<div id="modal-text" class="modal">
-	<p id="modal-message-text"></p>
+		<div id="form-survey-purpose">
+
+		</div>
+	</div>
+	<div id="form-submit">
+		<a href="#">SIGN IN</a>
+	</div>
 </div>
 </body>
 </html>

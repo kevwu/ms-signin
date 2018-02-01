@@ -40,8 +40,6 @@ $(window).on("keydown", (event) => {
 })
 
 const queryDirectory = (eid) => {
-	console.log("EID: " + eid)
-
 	// thank you Abhishek
 	const getInfo = (html, field, cleanup) => {
 		const PATTERN = ":[\\s\\S]*?<td>[\\s]+(.+)<";
@@ -76,8 +74,15 @@ const queryDirectory = (eid) => {
 				email: getInfo(body, "Email", true),
 			};
 
+			if(result.school !== "School of Engineering") {
+				// TODO error message, refuse to log in
+			}
+
 			console.log(result)
 		})
 }
 
-
+// show error and reset everything
+const showError = (message) => {
+	readerValue = ""
+}
