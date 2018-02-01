@@ -1,3 +1,15 @@
+/*
+Note: There is no build script to compile SCSS to CSS.
+You will have to do it manually, or with external tooling.
+(I'm using WebStorm's built-in watcher.)
+ */
+#main {
+  display: block;
+  margin: 0 auto;
+  text-align: center; }
 
+#main-logo {
+  display: block;
+  background: url(makerstudioslogo.svg) no-repeat center center; }
 
 /*# sourceMappingURL=render.css.map */

@@ -3,12 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hello World!</title>
+	<link rel="stylesheet" type="text/css" href="reset.css" />
+	<link rel="stylesheet" type="text/css" href="render.css" />
 	<script src="render.js"></script>
 </head>
 <body>
-<h1>Hello World!</h1>
-We are using node <script>document.write(process.versions.node)</script>,
-Chrome <script>document.write(process.versions.chrome)</script>,
-and Electron <script>document.write(process.versions.electron)</script>.
+<div id="logo">&nbsp;</div>
+
+<div id="reader-flag">
+	<p>SWIPE HERE</p>
+</div>
+
+<div id="form">
+
+</div>
+
+<div id="modal-text" class="modal">
+	<p id="modal-message-text"></p>
+</div>
 </body>
 </html>

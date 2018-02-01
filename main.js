@@ -9,10 +9,15 @@ const pjson = require("./package")
 let win
 
 let createWindow = () => {
-	const windowOptions = {width: 800, height: 600, frame: false}
+	const windowOptions = {
+		width: 800, height: 600, frame: false
+	}
 
 	if(pjson.env === "DEV") {
 		windowOptions.fullscreen = false
+		windowOptions.webPreferences = {
+			zoomFactor: 1.25
+		}
 	}
 
 	win = new BrowserWindow(windowOptions)
@@ -39,13 +44,13 @@ app.on('ready', createWindow)
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
-	if (process.platform !== 'darwin') {
+	if(process.platform !== 'darwin') {
 		app.quit()
 	}
 })
 
 app.on('activate', () => {
-	if (win === null) {
+	if(win === null) {
 		createWindow()
 	}
 })
