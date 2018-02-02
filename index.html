@@ -12,7 +12,7 @@
 
 <div id="swipehere">
 	<p>SWIPE HERE</p>
-	<h1>→ → →</h1>
+	<h1>← ← ←</h1>
 </div>
 
 <div id="form">
@@ -20,32 +20,48 @@
 		<img src="makerstudioslogo.svg" />
 		<h1>SIGN IN</h1>
 	</header>
-	<h1 id="form-message">
+	<h1 id="form-message" class="form-block">
 		Welcome! Please swipe your ID to sign in.
 	</h1>
-	<div id="form-dirinfo">
+	<div class="form-block">
+		<a id="form-dirinfo-button" class="button" href="#">Sign in manually</a>
+	</div>
+	<div id="form-dirinfo" class="form-block">
 		<table>
 			<tr>
-				<td>Name</td><td id="form-dirinfo-name"></td>
-				<td>EID</td><td id="form-dirinfo-eid"></td>
-				<td>Classification</td><td id="form-dirinfo-classification"></td>
-				<td>School</td><td id="form-dirinfo-school"></td>
-				<td>Major</td><td id="form-dirinfo-major"></td>
+				<td><label for="form-dirinfo-name">Name</label></td><td><input type="text" id="form-dirinfo-name" disabled/></td>
+			</tr>
+			<tr>
+				<td><label for="form-dirinfo-eid">EID</label></td><td><input type="text" id="form-dirinfo-eid" disabled/></td>
+			</tr>
+			<tr>
+				<td><label for="form-dirinfo-classification">Classification</label></td><td><input type="text" id="form-dirinfo-classification" disabled /></td>
+			</tr>
+			<tr>
+				<td><label for="form-dirinfo-school">School</label></td><td><input type="text" id="form-dirinfo-school" disabled/></td>
+			</tr>
+			<tr>
+				<td><label for="form-dirinfo-major">Major</label></td><td><input type="text" id="form-dirinfo-major" disabled/></td>
 			</tr>
 		</table>
 	</div>
-	<div id="form-survey">
+	<div id="form-survey" class="form-block">
+		<h1>What equipment will you use?</h1>
 		<div id="form-survey-equipment">
-
+			<div class="equipment-entry">Example</div>
 		</div>
 
 		<div id="form-survey-purpose">
-
+			<div class="purpose-entry">Example</div>
 		</div>
 	</div>
-	<div id="form-submit">
-		<a href="#">SIGN IN</a>
+	<div class="form-block">
+		<a id="form-submit" class="button" href="#">SIGN IN</a>
 	</div>
 </div>
+
+<footer>
+	<p>Designed and built by <a href="https://kwu.io">Kevin Wu</a>. [<a id="footer-reload" href="#">RELOAD</a>] [<a id="footer-quit" href="#">EXIT</a>]</p>
+</footer>
 </body>
 </html>

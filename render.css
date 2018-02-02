@@ -3,24 +3,17 @@ Note: There is no build script to compile SCSS to CSS.
 You will have to do it manually, or with external tooling.
 (I'm using WebStorm's built-in watcher.)
  */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+html {
+  box-sizing: border-box;
+  overflow: hidden; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 body {
-  font-family: "Open Sans", sans-serif; }
-
-#swipehere {
-  transform: rotate(270deg);
-  transform-origin: right top;
-  display: inline-block;
-  position: absolute;
-  top: 10px;
-  right: 40px;
-  text-align: center; }
-
-#form {
-  display: block;
-  margin: 0 auto;
-  width: 800px;
-  text-align: center; }
+  font-family: "PT Sans", sans-serif;
+  background: #eee; }
 
 header {
   height: 60px;
@@ -33,5 +26,87 @@ header {
     padding-top: 5px;
     display: inline;
     height: 46px; }
+
+#swipehere {
+  transform: rotate(270deg);
+  transform-origin: right top;
+  font-size: 32px;
+  display: inline-block;
+  position: absolute;
+  top: 16px;
+  right: 66px;
+  text-align: center; }
+
+#form {
+  background: #fff;
+  display: block;
+  margin: 20px auto;
+  padding-bottom: 15px;
+  width: 800px;
+  text-align: center;
+  box-shadow: 0 0 15px 4px #aaa;
+  font-size: 20px; }
+
+#form-message {
+  font-size: 34px;
+  padding: 15px; }
+
+#form-dirinfo, #form-survey, #form-submit {
+  display: none; }
+
+.form-block {
+  margin: 10px; }
+  .form-block table {
+    width: 100%; }
+  .form-block tr {
+    display: block;
+    text-align: left;
+    margin: 15px 0; }
+  .form-block td {
+    display: inline-block;
+    width: 40%;
+    padding: 5px; }
+  .form-block td:first-child {
+    text-align: right; }
+  .form-block td:last-child {
+    text-align: left; }
+  .form-block input {
+    outline: none;
+    border: 1px solid #ddd;
+    padding: 5px;
+    font-size: 20px;
+    font-family: "PT Sans", sans-serif; }
+
+.button {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+  font-size: 24px;
+  text-decoration: none;
+  background-color: #bf5700;
+  border: 1px solid #bf5700;
+  text-transform: uppercase;
+  color: #fff; }
+
+.button:hover {
+  background-color: #fff;
+  color: #bf5700; }
+
+footer {
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+  color: #eeeeee; }
+  footer a {
+    color: #eee;
+    text-decoration: none; }
+
+footer:hover {
+  color: #000; }
+  footer:hover a {
+    color: #bf5700; }
 
 /*# sourceMappingURL=render.css.map */
