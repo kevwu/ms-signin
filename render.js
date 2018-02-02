@@ -21,6 +21,10 @@ $(() => {
 			$target.text("Use card reader")
 
 			$formDirinfo.slideDown()
+			$('html, body').animate({
+				scrollTop: $("#form-survey").offset().top
+			})
+
 			$formDirinfo.find("input").prop("disabled", false)
 		} else {
 			$("#form-message").text("Welcome! Please swipe your ID to sign in.")
@@ -41,6 +45,9 @@ $(() => {
 			})
 		if(allFilledOut) {
 			$("#form-survey").slideDown()
+			$('html, body').animate({
+				scrollTop: $("#form-survey").offset().top
+			})
 		} else {
 			$("#form-survey").slideUp()
 		}
@@ -133,6 +140,47 @@ $(() => {
 				})
 			})
 	}
+
+	$(".equipment-entry").on("click", (event) => {
+		$(event.target).toggleClass("selected")
+	})
+
+	$(".purpose-entry").on("click", (event) => {
+		$(".purpose-entry").removeClass("selected")
+
+		$(event.target).addClass("selected")
+	})
+
+	$(".equipment-entry, .purpose-entry").on("click", (event) => {
+		if($(".equipment-entry.selected").length > 0 && $(".purpose-entry.selected").length === 1) {
+			$("#form-submit").fadeIn().css("display", "block")
+		} else {
+			$("#form-submit").fadeOut()
+		}
+	})
+
+	$("#form-submit").on("click", (event) => {
+		event.preventDefault()
+
+		const $equipmentEntrySelected = $(".equipment-entry.selected")
+
+		const equipment = []
+		$equipmentEntrySelected.each((index, el) => {
+			equipment.push($(el).text())
+		})
+
+		const result = {
+			name: $("#form-dirinfo-name").val(),
+			eid: $("#form-dirinfo-eid").val(),
+			classification: $("#form-dirinfo-classification").val(),
+			school: $("#form-dirinfo-school").val(),
+			major: $("#form-dirinfo-major").val(),
+			equipment: equipment,
+			purpose: $(".purpose-entry.selected").first().text()
+		}
+
+		console.log(result)
+	})
 
 	$("#footer-quit").on("click", () => {
 		window.close()

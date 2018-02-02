@@ -4,8 +4,6 @@ const url = require('url')
 
 const pjson = require("./package")
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
 let win
 
 let createWindow = () => {
@@ -28,12 +26,10 @@ let createWindow = () => {
 		slashes: true
 	}))
 
-	// Open the DevTools.
 	if(pjson.env === "DEV") {
 		win.webContents.openDevTools()
 	}
 
-	// Emitted when the window is closed.
 	win.on('closed', () => {
 		win = null
 	})

@@ -6,14 +6,14 @@ You will have to do it manually, or with external tooling.
 @import url("https://fonts.googleapis.com/css?family=PT+Sans");
 html {
   box-sizing: border-box;
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
 
 body {
   font-family: "PT Sans", sans-serif;
-  background: #eee; }
+  background: #fff; }
 
 header {
   height: 60px;
@@ -27,12 +27,15 @@ header {
     display: inline;
     height: 46px; }
 
+input {
+  box-shadow: 0 0 15px 1px #eee; }
+
 #swipehere {
   transform: rotate(270deg);
   transform-origin: right top;
   font-size: 32px;
   display: inline-block;
-  position: absolute;
+  position: fixed;
   top: 16px;
   right: 66px;
   text-align: center; }
@@ -40,8 +43,8 @@ header {
 #form {
   background: #fff;
   display: block;
-  margin: 20px auto;
-  padding-bottom: 15px;
+  margin: 40px auto;
+  padding: 20px;
   width: 800px;
   text-align: center;
   box-shadow: 0 0 15px 4px #aaa;
@@ -55,7 +58,10 @@ header {
   display: none; }
 
 .form-block {
-  margin: 10px; }
+  margin: 10px;
+  min-height: 60px; }
+  .form-block h1 {
+    font-size: 28px; }
   .form-block table {
     width: 100%; }
   .form-block tr {
@@ -93,20 +99,29 @@ header {
   background-color: #fff;
   color: #bf5700; }
 
+.select-entry {
+  display: block;
+  padding: 15px;
+  margin: 20px 0;
+  border: 1px solid #bf5700; }
+
+.selected, .select-entry:hover {
+  background-color: #bf5700;
+  color: #fff;
+  cursor: default; }
+
 footer {
   font-size: 14px;
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   padding: 15px;
-  color: #eeeeee; }
+  color: #000;
+  opacity: 0; }
   footer a {
-    color: #eee;
-    text-decoration: none; }
+    color: #bf5700; }
 
 footer:hover {
-  color: #000; }
-  footer:hover a {
-    color: #bf5700; }
+  opacity: 1.0; }
 
 /*# sourceMappingURL=render.css.map */
