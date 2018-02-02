@@ -1,3 +1,4 @@
+const {ipcRenderer} = require("electron")
 const request = require("request")
 const $ = require("jquery")
 
@@ -122,6 +123,7 @@ $(() => {
 					major: getInfo(body, "Major"),
 					classification: getInfo(body, "Classification"),
 					email: getInfo(body, "Email", true),
+					manual: manualSignin,
 				};
 
 				if(result.school !== "School of Engineering") {
@@ -180,6 +182,28 @@ $(() => {
 		}
 
 		console.log(result)
+
+		ipcRenderer.send("submit", result)
+
+		// TODO lots of duplicate code here
+
+		$("#form-dirinfo").slideUp()
+		$("#form-survey").slideUp()
+		$("#form-submit").slideUp()
+		$(".selected").removeClass("selected")
+		$("input").val('')
+
+		$("#form-dirinfo-button").slideUp()
+
+		$("#form-message").text("Thank you!")
+
+		setTimeout(() => {
+			$("#form-message").text("Welcome! Please swipe your ID to sign in.")
+			$("#form-dirinfo-button").text("Sign in manually").slideDown()
+
+
+			manualSignin = false
+		}, 2000)
 	})
 
 	$("#footer-quit").on("click", () => {
@@ -189,9 +213,4 @@ $(() => {
 	$("#footer-reload").on("click", () => {
 		window.location.reload()
 	})
-
-// show error and reset everything
-	const showError = (message) => {
-		readerValue = ""
-	}
 })

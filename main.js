@@ -1,8 +1,11 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 const url = require('url')
+const fs = require("fs")
 
 const pjson = require("./package")
+
+const LOGFILE = "./log.json"
 
 let win
 
@@ -34,6 +37,21 @@ let createWindow = () => {
 		win = null
 	})
 }
+
+ipcMain.on("submit", (event, data) => {
+	let log
+	if(fs.existsSync(LOGFILE)) {
+		log = JSON.parse(fs.readFileSync(LOGFILE).toString())
+	} else {
+		log = {
+			entries: []
+		}
+	}
+
+	log.entries.push(data)
+
+	fs.writeFileSync(LOGFILE, JSON.stringify(log))
+})
 
 // startup
 app.on('ready', createWindow)
